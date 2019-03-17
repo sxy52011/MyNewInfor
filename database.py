@@ -1,11 +1,10 @@
-from flask_sqlalchemy import SQLAlchemy
-from flask import Flask
-from datetime import datetime
-import config
 
-app = Flask(__name__)
-app.config.from_object(config.config_dict['config'])
-db = SQLAlchemy(app)
+from datetime import datetime
+from apps import app,db
+
+# app = Flask(__name__)
+# app.config.from_object(config.config_dict['config'])
+# db = SQLAlchemy(app)
 
 #父继承
 class Base(object):
@@ -88,8 +87,8 @@ class Comment(Base,db.Model):
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'),index=True)
     content = db.Column(db.String(255))
 
-
-if __name__ == '__main__':
-    db.drop_all()
-    db.create_all()
-    app.run()
+#
+# if __name__ == '__main__':
+#     db.drop_all()
+#     db.create_all()
+#     app.run()

@@ -27,10 +27,10 @@ $(function(){
             data:params,
             dataType:'json',
             success:function(res){
-                if(res.errno == '200'){
+                if(res.code == '200'){
                     window.location.href="http://127.0.0.1:5000/admin/newsreview"
                 }else{
-                    alert(res.errmsg);
+                    alert(res.message);
                 }
             }
 

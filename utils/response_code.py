@@ -2,6 +2,7 @@
 
 class RET:
     OK                  = "200"
+    TRYAGAIN            = "3000"
     DBERR               = "4001"
     NODATA              = "4002"
     DATAEXIST           = "4003"
@@ -23,6 +24,7 @@ class RET:
 
 error_map = {
     RET.OK                    : u"成功",
+    RET.TRYAGAIN              : u"请重试",
     RET.DBERR                 : u"数据库查询错误",
     RET.NODATA                : u"无数据",
     RET.DATAEXIST             : u"数据已存在",
