@@ -21,6 +21,9 @@ class RET:
     UNKOWNERR           = "4501"
     UNKOWNERRID         = "10010"
     UPDATERROR          = "10011"
+    IMGERROR            = "20000"
+    MOBILEEXIST         = "20001"
+    MOBILENOTEXIST      = "20002"
 
 error_map = {
     RET.OK                    : u"成功",
@@ -43,4 +46,7 @@ error_map = {
     RET.UNKOWNERR             : u"未知错误",
     RET.UNKOWNERRID           : u"未获取到ID",
     RET.UPDATERROR            : u"更新失败",
+    RET.IMGERROR              : u"验证码错误",
+    RET.MOBILEEXIST           : u"手机号已存在",
+    RET.MOBILENOTEXIST        : u"手机号不存在",
 }

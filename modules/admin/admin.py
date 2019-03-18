@@ -16,7 +16,7 @@ def index():
     else:
         return redirect(url_for('admin_blue.login'))
 
-
+#用户登录
 @admin_blue.route('/login',methods=['GET','POST'])
 def login():
     if request.method == 'POST':
@@ -154,3 +154,11 @@ def news_review_detail():
         news = News.query.filter(News.id == id).first()    #根据id 查询一条新闻
         data['news'] = news   #模板参数
         return render_template('/admin/news_review_detail.html',data = data)
+
+#账户退出
+@admin_blue.route('/logout',methods=['GET','POST'])
+def logout():
+    if request.method == 'POST':
+        session.pop('a_user_id')
+        msg = {'code': '200', 'message': '退出成功'}
+    return  jsonify(msg)

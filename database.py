@@ -29,7 +29,7 @@ class User(Base,db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     nick_name = db.Column(db.String(20),index=True)
-    password_hash = db.Column(db.String(200), nullable=False)
+    password_has = db.Column(db.String(200), nullable=False)
     mobile = db.Column(db.String(11), nullable=False)
     avatar_url = db.Column(db.String(256))
     last_login = db.Column(db.DateTime)

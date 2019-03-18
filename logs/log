@@ -1,0 +1,1438 @@
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:24] "GET /admin/ HTTP/1.1" 200 -
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_hash AS user_password_hash, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_hash AS user_password_hash, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.last_login >= %(last_login_1)s) AS anon_1
+INFO log.py:110 {'last_login_1': '2019-03-01'}
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_hash AS user_password_hash, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.last_login >= %(last_login_1)s) AS anon_1
+INFO log.py:110 {'last_login_1': '2019-03-18'}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:24] "GET /admin/user_count HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_hash AS user_password_hash, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id IS NULL 
+ LIMIT %(param_1)s
+INFO log.py:110 {'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:42] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:42] "GET /static/news/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:42] "GET /static/news/css/main.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:42] "GET /static/news/css/jquery.pagination.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:42] "GET /static/news/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:42] "GET /static/news/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:42] "GET /static/news/js/main.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:42] "GET /static/news/js/jquery.pagination.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:42] "GET /static/news/images/logo.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:42] "GET /static/news/images/pic_code.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:42] "GET /static/news/images/hit_icon.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:05:42] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88  * Detected change in 'H:\\人工智能工程文件\\MyNewInfor\\modules\\web\\index.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_hash AS user_password_hash, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id IS NULL 
+ LIMIT %(param_1)s
+INFO log.py:110 {'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:06:36] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:06:36] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88  * Detected change in 'H:\\人工智能工程文件\\MyNewInfor\\modules\\web\\index.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_hash AS user_password_hash, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id IS NULL 
+ LIMIT %(param_1)s
+INFO log.py:110 {'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:09:59] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:10:00] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88  * Detected change in 'H:\\人工智能工程文件\\MyNewInfor\\modules\\web\\index.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:11:09] "GET /static/news/images/shutoff.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:11:12] "GET /user/get_image?cur_id=e167bd1d-24dd-4629-979a-828934bd72c0&pre_id= HTTP/1.1" 404 -
+INFO _internal.py:88  * Detected change in 'H:\\人工智能工程文件\\MyNewInfor\\modules\\web\\index.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_hash AS user_password_hash, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id IS NULL 
+ LIMIT %(param_1)s
+INFO log.py:110 {'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:14:29] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:14:29] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:14:31] "GET /news/3 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 09:14:35] "GET /news/2 HTTP/1.1" 404 -
+INFO _internal.py:88  * Detected change in 'H:\\人工智能工程文件\\MyNewInfor\\modules\\web\\index.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Detected change in 'H:\\人工智能工程文件\\MyNewInfor\\modules\\web\\index.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:00:09] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:00:09] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:00:18] "GET /use HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:00:46] "GET /goods HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:01:11] "GET /user/get_image HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:01:11] "GET /user/get_image?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:01:11] "GET /user/get_image?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:01:11] "GET /user/get_image?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:01:11] "GET /user/get_image?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:01:11] "GET /user/get_image?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:01:11] "GET /user/get_image?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:14] "GET /user/get_image HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:14] "GET /user/get_image?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:14] "GET /user/get_image?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:14] "GET /user/get_image?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:14] "GET /user/get_image?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:15] "GET /user/get_image?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:15] "GET /user/get_image?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:16] "GET /user/get_image HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:16] "GET /user/get_image?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:16] "GET /user/get_image?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:16] "GET /user/get_image?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:16] "GET /user/get_image?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:16] "GET /user/get_image?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:04:16] "GET /user/get_image?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:06:48] "GET /user/get_image HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:06:48] "GET /user/get_image?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:06:48] "GET /user/get_image?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:06:48] "GET /user/get_image?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:06:48] "GET /user/get_image?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:06:48] "GET /user/get_image?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:06:48] "GET /user/get_image?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:07:29] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:07:29] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:07:29] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:07:36] "GET /use HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:07:47] "GET /user/get_image HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:07:47] "GET /user/get_image?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:07:47] "GET /user/get_image?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:07:47] "GET /user/get_image?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:07:47] "GET /user/get_image?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:07:47] "GET /user/get_image?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:08:47] "GET /user/get_image HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:08:47] "GET /user/get_image?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:08:47] "GET /user/get_image?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:08:47] "GET /user/get_image?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:08:47] "GET /user/get_image?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:08:47] "GET /user/get_image?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:08:47] "GET /user/get_image?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:11:16] "GET /user/get_image HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:11:16] "GET /user/get_image?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:11:16] "GET /user/get_image?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:11:16] "GET /user/get_image?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:11:16] "GET /user/get_image?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:11:16] "GET /user/get_image?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:11:16] "GET /user/get_image?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:25:05] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:25:06] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:25:24] "GET /user/get_image HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:25:28] "GET /user/get_image HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:25:28] "GET /user/get_image HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:25:29] "GET /user/get_image HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:25:29] "GET /user/get_image HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:25:29] "GET /user/get_image HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:50] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:50] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:52] "GET /user/get_image?cur_id=a20acc1a-a85c-4dae-9fe4-508db4d47f7c&pre_id= HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:53] "GET /user/get_image?cur_id=9679aa80-68f2-4477-a611-4b8230074bb5&pre_id=a20acc1a-a85c-4dae-9fe4-508db4d47f7c HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:53] "GET /user/get_image?cur_id=501c3317-1795-4867-8461-7020d16feedd&pre_id=9679aa80-68f2-4477-a611-4b8230074bb5 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:54] "GET /user/get_image?cur_id=182ba95c-d138-42a3-b70e-e3190fe5ed9a&pre_id=501c3317-1795-4867-8461-7020d16feedd HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:54] "GET /user/get_image?cur_id=a7ce6f46-6b55-4365-b070-5dd5bb8595c5&pre_id=182ba95c-d138-42a3-b70e-e3190fe5ed9a HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:54] "GET /user/get_image?cur_id=474209fb-f63b-4ae5-9f3f-09da18ac92ca&pre_id=a7ce6f46-6b55-4365-b070-5dd5bb8595c5 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:54] "GET /user/get_image?cur_id=7c64bdf0-1f7f-4f40-a6cd-80475971c7a8&pre_id=474209fb-f63b-4ae5-9f3f-09da18ac92ca HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:54] "GET /user/get_image?cur_id=fb5826c4-b871-4e11-9978-1888f7c57f2d&pre_id=7c64bdf0-1f7f-4f40-a6cd-80475971c7a8 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:55] "GET /user/get_image?cur_id=83070ee2-0c5b-4c85-b43f-b25a261a70ad&pre_id=fb5826c4-b871-4e11-9978-1888f7c57f2d HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:55] "GET /user/get_image?cur_id=306754f0-8b75-449f-acc1-986084eacb99&pre_id=83070ee2-0c5b-4c85-b43f-b25a261a70ad HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:55] "GET /user/get_image?cur_id=da1e549a-643d-48d7-8023-22b3bd77e326&pre_id=306754f0-8b75-449f-acc1-986084eacb99 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:55] "GET /user/get_image?cur_id=0c349a36-743c-4622-b93f-567ceda6185d&pre_id=da1e549a-643d-48d7-8023-22b3bd77e326 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:55] "GET /user/get_image?cur_id=ccbc0b81-b977-4152-b61d-83eaaf7b9bed&pre_id=0c349a36-743c-4622-b93f-567ceda6185d HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:56] "GET /user/get_image?cur_id=2c77d85a-5ec3-4bed-b767-767588153b08&pre_id=ccbc0b81-b977-4152-b61d-83eaaf7b9bed HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:56] "GET /user/get_image?cur_id=d30614e7-b681-452e-b528-1eafec93cfe4&pre_id=2c77d85a-5ec3-4bed-b767-767588153b08 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:56] "GET /user/get_image?cur_id=21ec6363-6a53-449e-967a-ac04c8c15456&pre_id=d30614e7-b681-452e-b528-1eafec93cfe4 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:56] "GET /user/get_image?cur_id=580d881b-3e88-44c9-a26e-069bd4b9ac26&pre_id=21ec6363-6a53-449e-967a-ac04c8c15456 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:56] "GET /user/get_image?cur_id=61d54c21-2ceb-47bb-b7c0-3edc984ae8ee&pre_id=580d881b-3e88-44c9-a26e-069bd4b9ac26 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:57] "GET /user/get_image?cur_id=c1003f99-2aa6-4e27-a27a-1eacc80f311c&pre_id=61d54c21-2ceb-47bb-b7c0-3edc984ae8ee HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:57] "GET /user/get_image?cur_id=d89d49ac-0e89-43a8-a052-a1898231343a&pre_id=c1003f99-2aa6-4e27-a27a-1eacc80f311c HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:57] "GET /user/get_image?cur_id=c3bc5190-8bbe-4a92-aa6d-874efaf76fd7&pre_id=d89d49ac-0e89-43a8-a052-a1898231343a HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:57] "GET /user/get_image?cur_id=d908e2b3-7dc6-481f-a5ed-4418f677b6a8&pre_id=c3bc5190-8bbe-4a92-aa6d-874efaf76fd7 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:57] "GET /user/get_image?cur_id=98e57283-5c62-4e15-a682-9b14c0000af8&pre_id=d908e2b3-7dc6-481f-a5ed-4418f677b6a8 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:58] "GET /user/get_image?cur_id=939d5dba-3dd0-453b-86f5-34eb5563779a&pre_id=98e57283-5c62-4e15-a682-9b14c0000af8 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:58] "GET /user/get_image?cur_id=b7a34065-21a9-4038-91cc-42f380c49bdd&pre_id=939d5dba-3dd0-453b-86f5-34eb5563779a HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:58] "GET /user/get_image?cur_id=148a7cf0-c1a2-4fd1-bffc-bc0c492a6598&pre_id=b7a34065-21a9-4038-91cc-42f380c49bdd HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:58] "GET /user/get_image?cur_id=3b2791b6-499a-4200-adac-cb4d5ca063c6&pre_id=148a7cf0-c1a2-4fd1-bffc-bc0c492a6598 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:58] "GET /user/get_image?cur_id=0de122d9-1a96-40e6-9c40-3fdaace1c48a&pre_id=3b2791b6-499a-4200-adac-cb4d5ca063c6 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 10:29:59] "GET /user/get_image?cur_id=90a93575-be7a-446c-8812-73cd27944bce&pre_id=0de122d9-1a96-40e6-9c40-3fdaace1c48a HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in 'H:\\GongCheng\\MyNewInfor\\modules\\web\\user.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:01:32] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:01:32] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:01:35] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:01:35] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:01:46] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:01:47] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:01:47] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:01:50] "GET /user/get_image?cur_id=1f514f19-d50c-4677-8b05-8a948a677140&pre_id= HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:02:29] "GET /user/get_image?cur_id=46a34a40-4c45-4705-a389-f1822e90ad29&pre_id=1f514f19-d50c-4677-8b05-8a948a677140 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:02:30] "GET /user/get_image?cur_id=031c36cf-bf14-4512-8a2b-6471cf236e65&pre_id=46a34a40-4c45-4705-a389-f1822e90ad29 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:02:30] "GET /user/get_image?cur_id=9d60798a-5635-4f53-b393-20c6cb7bb902&pre_id=031c36cf-bf14-4512-8a2b-6471cf236e65 HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in 'H:\\GongCheng\\MyNewInfor\\modules\\web\\user.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:04:12] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:04:12] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:04:14] "GET /user/get_image?cur_id=57fe200f-ff23-4366-b078-c145998dc8b5&pre_id= HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:17:04] "GET /user/get_image?cur_id=db227aad-d117-4e05-b8bd-99dc6d1ba544&pre_id=57fe200f-ff23-4366-b078-c145998dc8b5 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:17:42] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:17:45] "GET /user/get_image?cur_id=7a54272b-a68c-45f7-ba0b-2a2f0f4e97d4&pre_id=db227aad-d117-4e05-b8bd-99dc6d1ba544 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:17:46] "GET /user/get_image?cur_id=9f321036-77d3-4e6f-b75d-8a475b49329b&pre_id=7a54272b-a68c-45f7-ba0b-2a2f0f4e97d4 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:17:47] "GET /user/get_image?cur_id=ce9f9198-9017-4545-9839-62c8f84f15f6&pre_id=9f321036-77d3-4e6f-b75d-8a475b49329b HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:17:49] "GET /user/get_image?cur_id=29a171d0-973d-4c4b-8910-511a476fbe03&pre_id=ce9f9198-9017-4545-9839-62c8f84f15f6 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:17:57] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:17:59] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:17:59] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:17:59] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:00] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:01] "GET /user/get_image?cur_id=d12d40b9-717d-47e5-94a7-280d8903f6d0&pre_id=29a171d0-973d-4c4b-8910-511a476fbe03 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:01] "GET /user/get_image?cur_id=45e0803d-3429-4fb1-ade1-99f22bf08696&pre_id=d12d40b9-717d-47e5-94a7-280d8903f6d0 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:04] "GET /user/get_image?cur_id=8852a8f8-5194-4b6e-90c1-1f864c1ad2e5&pre_id=45e0803d-3429-4fb1-ade1-99f22bf08696 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:04] "GET /user/get_image?cur_id=2d5bcd34-2663-4fbc-9c69-8dfd39dad65a&pre_id=8852a8f8-5194-4b6e-90c1-1f864c1ad2e5 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:05] "GET /user/get_image?cur_id=565d900b-f45d-4509-b3ae-196ee389ada9&pre_id=2d5bcd34-2663-4fbc-9c69-8dfd39dad65a HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:07] "GET /user/get_image?cur_id=fb39d15c-8208-4258-b5cd-22e3940e938d&pre_id=565d900b-f45d-4509-b3ae-196ee389ada9 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:08] "GET /user/get_image?cur_id=8a1f0bbc-baa3-4103-bad0-91a59ebb48ae&pre_id=fb39d15c-8208-4258-b5cd-22e3940e938d HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:09] "GET /user/get_image?cur_id=5914a224-0474-40b1-896f-1a4c67a7db5d&pre_id=8a1f0bbc-baa3-4103-bad0-91a59ebb48ae HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:17] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:19] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:19] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:19] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:20] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:21] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:21] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:21] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:25] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:26] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:28] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:18:58] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:02] "GET /user/get_image?cur_id=8b805edc-cb1d-4d75-9ea5-5ffb3e4bc9f4&pre_id=5914a224-0474-40b1-896f-1a4c67a7db5d HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:19] "GET /user/get_image?cur_id=6ac2ec73-91a3-4cfe-a419-8277191c9d0f&pre_id=8b805edc-cb1d-4d75-9ea5-5ffb3e4bc9f4 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:19] "GET /user/get_image?cur_id=5886cbe3-c2c3-4317-9fba-bb64fdab718b&pre_id=6ac2ec73-91a3-4cfe-a419-8277191c9d0f HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:20] "GET /user/get_image?cur_id=e0d3c1b2-64e1-4d1d-89d9-a918622adfb6&pre_id=5886cbe3-c2c3-4317-9fba-bb64fdab718b HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:31] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:31] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:32] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:32] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:34] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:34] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:34] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:48] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:49] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:19:50] "GET /user/get_image?cur_id=ca3f4cda-ace1-4cf5-9493-f3f519f8e052&pre_id= HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:20:08] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:20:37] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:20:39] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:00] "GET /user/get_image?cur_id=f0f3ffea-c170-4ae5-b696-7466f843680a&pre_id=ca3f4cda-ace1-4cf5-9493-f3f519f8e052 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:01] "GET /user/get_image?cur_id=498ad401-a4a0-40b8-a5ce-999e98a20e18&pre_id=f0f3ffea-c170-4ae5-b696-7466f843680a HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:01] "GET /user/get_image?cur_id=6e14a049-067c-41a7-acf9-41aee0787d90&pre_id=498ad401-a4a0-40b8-a5ce-999e98a20e18 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:02] "GET /user/get_image?cur_id=17b5bbde-4102-4f57-91c3-e83b0f86f545&pre_id=6e14a049-067c-41a7-acf9-41aee0787d90 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:03] "GET /user/get_image?cur_id=12c8bd10-adf7-4627-b7f7-2e6b56729969&pre_id=17b5bbde-4102-4f57-91c3-e83b0f86f545 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:03] "GET /user/get_image?cur_id=ff985d3e-3749-4024-b96a-b6417b063fc8&pre_id=12c8bd10-adf7-4627-b7f7-2e6b56729969 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:04] "GET /user/get_image?cur_id=910d1696-fad7-46d5-9c07-831337cdff00&pre_id=ff985d3e-3749-4024-b96a-b6417b063fc8 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:05] "GET /user/get_image?cur_id=5813e186-0300-49f2-91d9-e14bf9db84ba&pre_id=910d1696-fad7-46d5-9c07-831337cdff00 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:06] "GET /user/get_image?cur_id=aafe62a2-9f1a-464f-983e-0863af4655e5&pre_id=5813e186-0300-49f2-91d9-e14bf9db84ba HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:06] "GET /user/get_image?cur_id=28cfd247-e820-4da1-81f1-5650d3502c1f&pre_id=aafe62a2-9f1a-464f-983e-0863af4655e5 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:07] "GET /user/get_image?cur_id=c9bd9be9-63f2-48f2-949a-8a8a64f6e105&pre_id=28cfd247-e820-4da1-81f1-5650d3502c1f HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:13] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:14] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:14] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:33] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:33] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:33] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:36] "GET /user/get_image?cur_id=47bc48cc-a85b-4a46-8c26-c81a310f140b&pre_id= HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:43] "GET /user/get_image?cur_id=a64eb8f9-f143-456b-95d2-9c0059b9505b&pre_id=47bc48cc-a85b-4a46-8c26-c81a310f140b HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:45] "GET /user/get_image?cur_id=183ac619-f70a-48e8-93c1-855e0a8ecdda&pre_id=a64eb8f9-f143-456b-95d2-9c0059b9505b HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:21:47] "GET /user/get_image?cur_id=5e893cf3-c0d5-4f04-9e17-e74dc2028523&pre_id=183ac619-f70a-48e8-93c1-855e0a8ecdda HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:05] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:07] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:14] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:15] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:15] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:15] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:15] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:16] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:16] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:16] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:17] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:17] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:17] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:18] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:18] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:18] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:19] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:22] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:24] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:24] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:26] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:26] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:32] "GET /user/get_image?cur_id=d1dee128-6958-4bfc-a349-51e37fe11420&pre_id=5e893cf3-c0d5-4f04-9e17-e74dc2028523 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:32] "GET /user/get_image?cur_id=e68c2dd7-7fd9-4cad-8a54-65e768d18140&pre_id=d1dee128-6958-4bfc-a349-51e37fe11420 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:33] "GET /user/get_image?cur_id=fcca3a02-c56f-427d-8cf2-f5db75ddf8aa&pre_id=e68c2dd7-7fd9-4cad-8a54-65e768d18140 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:41] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:42] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:22:43] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:03] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:04] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:04] "GET /favicon.ico HTTP/1.1" 404 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:20] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:21] "GET /static/news/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:21] "GET /static/news/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:21] "GET /static/news/js/main.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:21] "GET /static/news/css/main.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:21] "GET /static/news/css/jquery.pagination.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:21] "GET /static/news/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:21] "GET /static/news/js/jquery.pagination.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:21] "GET /static/news/images/logo.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:21] "GET /static/news/images/pic_code.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:21] "GET /static/news/images/hit_icon.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:21] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:21] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:23] "GET /user/get_image?cur_id=784cb445-5d74-40a3-8b40-e37addc1bf27&pre_id= HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:23] "GET /static/news/images/shutoff.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:31] "GET /user/get_image?cur_id=cf515698-05c4-453c-acb6-750f38a825d6&pre_id=784cb445-5d74-40a3-8b40-e37addc1bf27 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:32] "GET /user/get_image?cur_id=10c88e5a-9008-4244-84a3-17a019893408&pre_id=cf515698-05c4-453c-acb6-750f38a825d6 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:34] "GET /user/get_image?cur_id=a0bd3615-81e9-42a1-ac63-bfa2b5c89f7f&pre_id=10c88e5a-9008-4244-84a3-17a019893408 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:37] "GET /user/get_image?cur_id=b5d8a43a-e094-4648-8cf9-3bac6c840fcb&pre_id=a0bd3615-81e9-42a1-ac63-bfa2b5c89f7f HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:37] "GET /user/get_image?cur_id=4d3ee381-e04f-4d34-87ca-eccba461ef37&pre_id=b5d8a43a-e094-4648-8cf9-3bac6c840fcb HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:38] "GET /user/get_image?cur_id=8daa023a-19cf-4c28-a951-d87f31edb6da&pre_id=4d3ee381-e04f-4d34-87ca-eccba461ef37 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:39] "GET /user/get_image?cur_id=b84069d2-4359-4d2d-ab7f-4cb88ad3dbca&pre_id=8daa023a-19cf-4c28-a951-d87f31edb6da HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:39] "GET /user/get_image?cur_id=c77be485-16c0-44df-962d-c9a4e6d134a1&pre_id=b84069d2-4359-4d2d-ab7f-4cb88ad3dbca HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:40] "GET /user/get_image?cur_id=633da0e6-0488-4be5-b261-759ec851b1a5&pre_id=c77be485-16c0-44df-962d-c9a4e6d134a1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:41] "GET /user/get_image?cur_id=d2edd7e0-0a8e-4b54-9f79-73ee4be78c57&pre_id=633da0e6-0488-4be5-b261-759ec851b1a5 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:42] "GET /user/get_image?cur_id=155cc3e9-1d0b-4122-b5b0-96a0e13e5965&pre_id=d2edd7e0-0a8e-4b54-9f79-73ee4be78c57 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:42] "GET /user/get_image?cur_id=d7e8e51b-cf42-4d31-acba-45a5a9d4288b&pre_id=155cc3e9-1d0b-4122-b5b0-96a0e13e5965 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:43] "GET /user/get_image?cur_id=fc9175fb-0c61-43c4-a571-87589ab8a1e7&pre_id=d7e8e51b-cf42-4d31-acba-45a5a9d4288b HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:44] "GET /user/get_image?cur_id=5edfdbfa-1ed8-4fc8-b6c6-6912b02249ec&pre_id=fc9175fb-0c61-43c4-a571-87589ab8a1e7 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:44] "GET /user/get_image?cur_id=659fecb4-da50-4e0e-8e30-6d64b94964a1&pre_id=5edfdbfa-1ed8-4fc8-b6c6-6912b02249ec HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:45] "GET /user/get_image?cur_id=d9e84c84-b8b3-4a7a-897b-9fde29482218&pre_id=659fecb4-da50-4e0e-8e30-6d64b94964a1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:46] "GET /user/get_image?cur_id=c39ae581-43d1-4627-ac93-78330acadefa&pre_id=d9e84c84-b8b3-4a7a-897b-9fde29482218 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:46] "GET /user/get_image?cur_id=57bf98bf-9afc-4d85-a24b-2b00cff077fe&pre_id=c39ae581-43d1-4627-ac93-78330acadefa HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:47] "GET /user/get_image?cur_id=63c6734c-8326-4107-90d9-4e3f7fe0b1dd&pre_id=57bf98bf-9afc-4d85-a24b-2b00cff077fe HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:48] "GET /user/get_image?cur_id=f1e553e3-39b4-4274-bb4d-ec127e3f7977&pre_id=63c6734c-8326-4107-90d9-4e3f7fe0b1dd HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:49] "GET /user/get_image?cur_id=ec0fc969-5a30-48ae-b43b-db2b4483a554&pre_id=f1e553e3-39b4-4274-bb4d-ec127e3f7977 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:24:49] "GET /user/get_image?cur_id=a113324a-af01-4284-8ce7-a1104924d013&pre_id=ec0fc969-5a30-48ae-b43b-db2b4483a554 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:25:00] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:25:28] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:25:29] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:25:29] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:32:42] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:32:42] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:32:43] "GET /user/get_image?cur_id=5e28b5d5-9a21-4585-a110-8132f6c7ac28&pre_id= HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:04] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:06] "GET /user/get_image?cur_id=2e30c5a0-ce4c-436e-8080-19fd3c4aa4aa&pre_id=5e28b5d5-9a21-4585-a110-8132f6c7ac28 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:07] "GET /user/get_image?cur_id=c2dcf9e7-197e-4f85-9f4d-4815ad1bf7e4&pre_id=2e30c5a0-ce4c-436e-8080-19fd3c4aa4aa HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:08] "GET /user/get_image?cur_id=c82f35d8-7f78-48a4-ac0a-5b9434711389&pre_id=c2dcf9e7-197e-4f85-9f4d-4815ad1bf7e4 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:14] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:16] "GET /user/get_image?cur_id=8777e8f3-bdda-49a4-946b-5e81d7dce851&pre_id=c82f35d8-7f78-48a4-ac0a-5b9434711389 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:17] "GET /user/get_image?cur_id=72483ded-67ec-4825-b0b3-01eec967662f&pre_id=8777e8f3-bdda-49a4-946b-5e81d7dce851 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:18] "GET /user/get_image?cur_id=c7653d53-b529-4ce3-89c0-3579e8a750c5&pre_id=72483ded-67ec-4825-b0b3-01eec967662f HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:18] "GET /user/get_image?cur_id=0789e71d-b78c-4fd1-b3d2-b99c85feabb3&pre_id=c7653d53-b529-4ce3-89c0-3579e8a750c5 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:19] "GET /user/get_image?cur_id=c3fd2b17-34be-4114-a613-25c86bc2997c&pre_id=0789e71d-b78c-4fd1-b3d2-b99c85feabb3 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:20] "GET /user/get_image?cur_id=5fb7b970-169d-4b2d-b80f-bf8f930236c3&pre_id=c3fd2b17-34be-4114-a613-25c86bc2997c HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:21] "GET /user/get_image?cur_id=95b3d271-21e3-47f2-aab7-7821de90e801&pre_id=5fb7b970-169d-4b2d-b80f-bf8f930236c3 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:21] "GET /user/get_image?cur_id=3f509a48-aa6e-4b93-8899-a288bedb5f55&pre_id=95b3d271-21e3-47f2-aab7-7821de90e801 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:32] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:33] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:33] "POST /user/register HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:35] "GET /user/get_image?cur_id=be57b3f1-8012-4337-946c-9abd172aacc7&pre_id=3f509a48-aa6e-4b93-8899-a288bedb5f55 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:36] "GET /user/get_image?cur_id=725d2b61-8887-4e41-b10f-f24a09138251&pre_id=be57b3f1-8012-4337-946c-9abd172aacc7 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:36] "GET /user/get_image?cur_id=a6f430d6-bd6d-4a2d-bc91-d997ed820437&pre_id=725d2b61-8887-4e41-b10f-f24a09138251 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:37] "GET /user/get_image?cur_id=7c1d1ddb-85bc-4029-b4de-6c329b70fdb4&pre_id=a6f430d6-bd6d-4a2d-bc91-d997ed820437 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:38] "GET /user/get_image?cur_id=31a25ece-5012-47e6-b5f6-c96e697387c8&pre_id=7c1d1ddb-85bc-4029-b4de-6c329b70fdb4 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:39] "GET /user/get_image?cur_id=76035a69-e0aa-4d2a-b0a1-29c6ab09d2de&pre_id=31a25ece-5012-47e6-b5f6-c96e697387c8 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:39] "GET /user/get_image?cur_id=40c3997b-4485-49f2-ad93-36234a205131&pre_id=76035a69-e0aa-4d2a-b0a1-29c6ab09d2de HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:40] "GET /user/get_image?cur_id=2e9a3251-afbe-4812-95a9-453ce1db6111&pre_id=40c3997b-4485-49f2-ad93-36234a205131 HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_hash AS user_password_hash, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.mobile = %(mobile_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'mobile_1': '13699990000', 'param_1': 1}
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:48] "POST /user/register HTTP/1.1" 500 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_hash AS user_password_hash, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.mobile = %(mobile_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'mobile_1': '13699990000', 'param_1': 1}
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:33:49] "POST /user/register HTTP/1.1" 500 -
+INFO _internal.py:88  * Detected change in 'H:\\GongCheng\\MyNewInfor\\modules\\web\\user.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Detected change in 'H:\\GongCheng\\MyNewInfor\\modules\\web\\user.py', reloading
+INFO _internal.py:88  * Restarting with stat
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:38:09] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:38:10] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:38:11] "GET /user/get_image?cur_id=085f3eef-0391-4002-9168-8944ff100c53&pre_id= HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:38:22] "GET /user/get_image?cur_id=66255cd7-66d0-4659-872c-9f0d8f2ff5fc&pre_id=085f3eef-0391-4002-9168-8944ff100c53 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:38:23] "GET /user/get_image?cur_id=82f8854e-8400-4f2b-a392-2884edb8ee85&pre_id=66255cd7-66d0-4659-872c-9f0d8f2ff5fc HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:38:24] "GET /user/get_image?cur_id=ab0662dd-5c9a-4381-b029-5d055f4eb121&pre_id=82f8854e-8400-4f2b-a392-2884edb8ee85 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:38:24] "GET /user/get_image?cur_id=4b7edba7-331c-4b3a-b843-1ecb9c94e24f&pre_id=ab0662dd-5c9a-4381-b029-5d055f4eb121 HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_hash AS user_password_hash, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.mobile = %(mobile_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'mobile_1': '13288880000', 'param_1': 1}
+INFO log.py:110 INSERT INTO user (create_time, update_time, nick_name, password_hash, mobile, avatar_url, last_login, signature, gender) VALUES (%(create_time)s, %(update_time)s, %(nick_name)s, %(password_hash)s, %(mobile)s, %(avatar_url)s, %(last_login)s, %(signature)s, %(gender)s)
+INFO log.py:110 {'create_time': datetime.datetime(2019, 3, 18, 11, 38, 5, 490292), 'update_time': datetime.datetime(2019, 3, 18, 11, 38, 5, 490292), 'nick_name': None, 'password_hash': 'pbkdf2:sha256:50000$mTJXF3AU$6afe0eb450bb3446f804afa72af322658cb1ca89b0cfe6bc459bbf26bb08e094', 'mobile': '13288880000', 'avatar_url': None, 'last_login': None, 'signature': None, 'gender': 'Man'}
+INFO log.py:110 COMMIT
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_hash AS user_password_hash, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(param_1)s
+INFO log.py:110 {'param_1': 4}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:38:32] "POST /user/register HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_hash AS user_password_hash, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:38:32] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:38:32] "GET /static/news/images/person01.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:38:32] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88  * Detected change in 'H:\\GongCheng\\MyNewInfor\\modules\\web\\user.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:40:24] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:40:25] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 11:40:27] "GET /user/logout HTTP/1.1" 404 -
+INFO _internal.py:88  * Detected change in 'H:\\GongCheng\\MyNewInfor\\modules\\web\\user.py', reloading
+INFO _internal.py:88  * Restarting with stat
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:11:26] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:11:27] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:11:27] "GET /favicon.ico HTTP/1.1" 404 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.mobile = %(mobile_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'mobile_1': '13288880000', 'param_1': 1}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:11:54] "POST /user/login HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:11:54] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:11:54] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88  * Detected change in 'H:\\GongCheng\\MyNewInfor\\modules\\web\\user.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:17:32] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in 'H:\\GongCheng\\MyNewInfor\\utils\\response_code.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.mobile = %(mobile_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'mobile_1': '13288880000', 'param_1': 1}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:17:52] "POST /user/login HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:17:52] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:17:52] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:17:52] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:17:55] "GET /user/logout HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:17:57] "GET /user/logout HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:17:59] "GET /user/logout HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:18:04] "GET /user/logout HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:18:05] "GET /user/logout HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:18:05] "GET /user/logout HTTP/1.1" 500 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:18:23] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:18:23] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:18:26] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:18:26] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:18:27] "GET /user/logout HTTP/1.1" 500 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:19:57] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:19:58] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:19:59] "GET /user/logout HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:19:59] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 14:19:59] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88  * Detected change in 'H:\\GongCheng\\MyNewInfor\\modules\\web\\user.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 15:18:02] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 15:18:03] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 15:18:07] "GET /news/3 HTTP/1.1" 404 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:22] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:22] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:26] "GET /admin HTTP/1.1" 301 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:26] "GET /admin/ HTTP/1.1" 302 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:26] "GET /admin/login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:26] "GET /static/admin/css/main.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:26] "GET /static/admin/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:26] "GET /static/admin/images/logo.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:27] "GET /static/admin/images/login-bg.jpg HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT `admin`.create_time AS admin_create_time, `admin`.update_time AS admin_update_time, `admin`.id AS admin_id, `admin`.name AS admin_name, `admin`.pass_hash AS admin_pass_hash 
+FROM `admin` 
+WHERE `admin`.name = %(name_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'name_1': 'ljj', 'param_1': 1}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:36] "POST /admin/login HTTP/1.1" 302 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:36] "GET /admin/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:36] "GET /static/admin/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:36] "GET /static/admin/images/person.png HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user) AS anon_1
+INFO log.py:110 {}
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:36] "GET /static/admin/images/icons.png HTTP/1.1" 200 -
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.last_login >= %(last_login_1)s) AS anon_1
+INFO log.py:110 {'last_login_1': '2019-03-01'}
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.last_login >= %(last_login_1)s) AS anon_1
+INFO log.py:110 {'last_login_1': '2019-03-18'}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:36] "GET /admin/user_count HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:36] "GET /static/admin/js/echarts.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:38] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:39] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:39] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:40] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:40] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:40] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:40] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:41] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:41] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:53:41] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:54:52] "GET /admin/ HTTP/1.1" 200 -
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.last_login >= %(last_login_1)s) AS anon_1
+INFO log.py:110 {'last_login_1': '2019-03-01'}
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.last_login >= %(last_login_1)s) AS anon_1
+INFO log.py:110 {'last_login_1': '2019-03-18'}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:54:52] "GET /admin/user_count HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:54:53] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:54:58] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:54:59] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88  * Restarting with stat
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:58:04] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:58:04] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:58:07] "GET /admin/ HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.last_login >= %(last_login_1)s) AS anon_1
+INFO log.py:110 {'last_login_1': '2019-03-01'}
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.last_login >= %(last_login_1)s) AS anon_1
+INFO log.py:110 {'last_login_1': '2019-03-18'}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:58:07] "GET /admin/user_count HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:58:08] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:58:09] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 16:58:09] "POST /admin/logout HTTP/1.1" 405 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 17:00:14] "POST /admin/logout HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 17:00:14] "GET /admin/login HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 17:01:44] "GET /admin/login HTTP/1.1" 200 -
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT `admin`.create_time AS admin_create_time, `admin`.update_time AS admin_update_time, `admin`.id AS admin_id, `admin`.name AS admin_name, `admin`.pass_hash AS admin_pass_hash 
+FROM `admin` 
+WHERE `admin`.name = %(name_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'name_1': 'ljj', 'param_1': 1}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 17:01:48] "POST /admin/login HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT `admin`.create_time AS admin_create_time, `admin`.update_time AS admin_update_time, `admin`.id AS admin_id, `admin`.name AS admin_name, `admin`.pass_hash AS admin_pass_hash 
+FROM `admin` 
+WHERE `admin`.name = %(name_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'name_1': 'ljj', 'param_1': 1}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 17:02:03] "POST /admin/login HTTP/1.1" 302 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 17:02:03] "GET /admin/ HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.last_login >= %(last_login_1)s) AS anon_1
+INFO log.py:110 {'last_login_1': '2019-03-01'}
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.last_login >= %(last_login_1)s) AS anon_1
+INFO log.py:110 {'last_login_1': '2019-03-18'}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 17:02:03] "GET /admin/user_count HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 17:02:05] "POST /admin/logout HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [18/Mar/2019 17:02:05] "GET /admin/login HTTP/1.1" 200 -
