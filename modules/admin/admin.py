@@ -161,4 +161,4 @@ def logout():
     if request.method == 'POST':
         session.pop('a_user_id')
         msg = {'code': '200', 'message': '退出成功'}
-    return  jsonify(msg)
+        return  jsonify(msg)

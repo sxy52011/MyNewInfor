@@ -15,7 +15,7 @@
         <ul class="article_list">
 
             {% for news in data.news_list %}
-            {% if news.status == 0 %}
+            {% if news.status == 2 %}
                 <li><a href="/news/{{ news.id }}">{{ news.title }}</a><em class="pass">已通过</em><span>{{ news.create_time }}</span></li>
             {% elif news.status == 1 %}
                 <li><a href="#">{{ news.title }}</a><em class="review">审核中</em><span>{{ news.create_time }}</span></li>
@@ -32,7 +32,7 @@
 
 
         </ul>
-        <div id="pagination" class="page">jjkjjjj</div>
+        <div id="pagination" class="page"></div>
         <script>
             // 调用父页面的方法改变菜单指示
             // window.parent.fnChangeMenu(2);
