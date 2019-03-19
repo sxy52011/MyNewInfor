@@ -224,6 +224,6 @@ def news_list():
     #查询自己发布到新闻列表，并根据发布时间倒叙，使用分页方式查询（paginate(current_page,msg_count,False))
     news_list = News.query.filter(News.user_id == user_id).order_by(News.create_time.desc()).paginate(current_page,msg_count,False)
     data['news_list'] = news_list.items         #items 为分页查询结果到 数据内容
-    data['current_page'] = news_list.page9       #page 为当前页（分页插件参数）
+    data['current_page'] = news_list.page       #page 为当前页（分页插件参数）
     data['total_page'] = news_list.pages        #pages 为总页数（分页插件参数）
     return render_template('/news/user_news_list.html',data = data)

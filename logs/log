@@ -4430,3 +4430,203 @@ INFO _internal.py:88  * Restarting with stat
 WARNING _internal.py:88  * Debugger is active!
 INFO _internal.py:88  * Debugger PIN: 205-814-049
 INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:12] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:12] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:14] "GET /user/user_info HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:14] "GET /user/base_info HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.user_id = %(user_id_1)s ORDER BY news.create_time DESC 
+ LIMIT %(param_1)s, %(param_2)s
+INFO log.py:110 {'user_id_1': 4, 'param_1': 0, 'param_2': 2}
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.user_id = %(user_id_1)s) AS anon_1
+INFO log.py:110 {'user_id_1': 4}
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:16] "GET /user/news_list HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:16] "GET /user/news_list?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:16] "GET /user/news_list?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:16] "GET /user/news_list?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:16] "GET /user/news_list?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:17] "GET /user/news_list?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:19] "GET /user/news_release HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.user_id = %(user_id_1)s ORDER BY news.create_time DESC 
+ LIMIT %(param_1)s, %(param_2)s
+INFO log.py:110 {'user_id_1': 4, 'param_1': 0, 'param_2': 2}
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.user_id = %(user_id_1)s) AS anon_1
+INFO log.py:110 {'user_id_1': 4}
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:36] "GET /user/news_list HTTP/1.1" 500 -
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:36] "GET /user/news_list?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:36] "GET /user/news_list?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:36] "GET /user/news_list?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:36] "GET /user/news_list?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:36] "GET /user/news_list?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in 'H:\\GongCheng\\MyNewInfor\\modules\\web\\user.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 205-814-049
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO log.py:110 SHOW VARIABLES LIKE 'sql_mode'
+INFO log.py:110 {}
+INFO log.py:110 SHOW VARIABLES LIKE 'lower_case_table_names'
+INFO log.py:110 {}
+INFO log.py:110 SELECT DATABASE()
+INFO log.py:110 {}
+INFO log.py:110 show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+INFO log.py:110 {}
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT category.create_time AS category_create_time, category.update_time AS category_update_time, category.id AS category_id, category.name AS category_name 
+FROM category
+INFO log.py:110 {}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.status = %(status_1)s ORDER BY news.clicks DESC 
+ LIMIT %(param_1)s
+INFO log.py:110 {'status_1': 2, 'param_1': 10}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:51:55] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:51:55] "GET /newslist?page=1&cid=1&per_page=10 HTTP/1.1" 404 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:51:57] "GET /user/user_info HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:51:57] "GET /user/base_info HTTP/1.1" 200 -
+INFO log.py:110 BEGIN (implicit)
+INFO log.py:110 SELECT user.create_time AS user_create_time, user.update_time AS user_update_time, user.id AS user_id, user.nick_name AS user_nick_name, user.password_has AS user_password_has, user.mobile AS user_mobile, user.avatar_url AS user_avatar_url, user.last_login AS user_last_login, user.signature AS user_signature, user.gender AS user_gender 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO log.py:110 {'id_1': 4, 'param_1': 1}
+INFO log.py:110 SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.user_id = %(user_id_1)s ORDER BY news.create_time DESC 
+ LIMIT %(param_1)s, %(param_2)s
+INFO log.py:110 {'user_id_1': 4, 'param_1': 0, 'param_2': 2}
+INFO log.py:110 SELECT count(*) AS count_1 
+FROM (SELECT news.create_time AS news_create_time, news.update_time AS news_update_time, news.id AS news_id, news.title AS news_title, news.source AS news_source, news.index_image_u AS news_index_image_u, news.digest AS news_digest, news.clicks AS news_clicks, news.content AS news_content, news.category_id AS news_category_id, news.user_id AS news_user_id, news.status AS news_status, news.reason AS news_reason 
+FROM news 
+WHERE news.user_id = %(user_id_1)s) AS anon_1
+INFO log.py:110 {'user_id_1': 4}
+INFO log.py:110 COMMIT
+INFO _internal.py:88 127.0.0.1 - - [19/Mar/2019 19:51:58] "GET /user/news_list HTTP/1.1" 200 -
