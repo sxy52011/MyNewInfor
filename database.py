@@ -39,6 +39,19 @@ class User(Base,db.Model):
     news_collection = db.relationship('News',secondary=table_user_news
                                      ,backref='users',lazy='dynamic')
 
+    def to_dict(self):
+        user_list = {
+            'id': self.id,
+            'nick_name' :self.nick_name,
+            'password_has' : self.password_has,
+            'mobile' : self.mobile,
+            'avatar_url' : self.avatar_url,
+            'last_login' : self.last_login.strftime('%Y-%m-%d %H:%M:%S'),
+            'signature' : self.signature,
+            'gender' : self.gender
+        }
+        return user_list
+
 #新闻分类表
 class Category(Base,db.Model):
     __tablename__ = 'category'
@@ -67,7 +80,7 @@ class News(Base,db.Model):
                 'id': self.id,
                 'title': self.title,
                 'source': self.source,
-                'index_image_u': self.index_image_u,
+                'index_image_url': self.index_image_u,
                 'digest': self.digest,
                 'clicks': self.clicks,
                 'content': self.content,
@@ -75,7 +88,8 @@ class News(Base,db.Model):
                 'user_id': self.user_id,
                 'status': self.status,
                 'reason': self.reason,
-                'create_time': self.create_time.strftime('%Y-%m-%D %H:%M:%S')
+                'create_time': self.create_time.strftime('%Y-%m-%d %H:%M:%S'),
+                'update_time': self.update_time.strftime('%Y-%m-%d %H:%M:%S')
             }
         return new_dict
 
@@ -86,6 +100,19 @@ class Comment(Base,db.Model):
     news_id = db.Column(db.Integer,db.ForeignKey('news.id'),index=True)
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'),index=True)
     content = db.Column(db.String(255))
+    def to_dict(self):
+        com_list = {
+            'id' : self.id,
+            'news_id' : self.news_id,
+            'user_id' : self.user_id,
+            'content' : self.content,
+            'create_time' : self.create_time.strftime('%Y-%m-%d %H:%M:%S'),
+            'update_time' : self.update_time.strftime('%Y-%m-%d %H:%M:%S'),
+            'user' : User.query.filter(User.id == self.user_id).first().to_dict()
+        }
+        return com_list
+
+
 
 #
 # if __name__ == '__main__':

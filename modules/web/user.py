@@ -227,3 +227,5 @@ def news_list():
     data['current_page'] = news_list.page       #page 为当前页（分页插件参数）
     data['total_page'] = news_list.pages        #pages 为总页数（分页插件参数）
     return render_template('/news/user_news_list.html',data = data)
+
+
